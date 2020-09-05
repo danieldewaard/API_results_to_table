@@ -4,10 +4,37 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { users, UserState } from './users/reducers';
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { reducer as reduxFormReducer } from 'redux-form';
+
+
+//declare global {
+//   interface Window {
+//        __REDUX_DEVTOOLS_EXTENSION__: any;
+//   }
+//}
+
+export interface MainState {
+    users: UserState;
+}
+
+const reducers = combineReducers({
+    users
+});
+
+const store = createStore(
+    reducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk)
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+        <App/>
+    </Provider>,
   document.getElementById('root')
 );
 
@@ -15,3 +42,5 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+

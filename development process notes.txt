@@ -1,0 +1,5 @@
+1. Installing Node 
+https://nodejs.org/en/
+
+2. Following the following instructions to initalise a react app
+https://github.com/facebook/create-react-app
