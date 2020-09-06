@@ -39,17 +39,5 @@
   },
   "devDependencies": {
     "redux-thunk": "^2.3.0"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "author": "Daniel de Waard",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/danieldewaard/API_results_to_table.git"
-  },
-  "bugs": {
-    "url": "https://github.com/danieldewaard/API_results_to_table/issues"
-  },
-  "homepage": "https://github.com/danieldewaard/API_results_to_table#readme"
+  }
 }
