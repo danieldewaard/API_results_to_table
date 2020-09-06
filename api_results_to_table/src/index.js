@@ -8,14 +8,6 @@ import { users, UserState } from './users/reducers';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import { reducer as reduxFormReducer } from 'redux-form';
-
-
-//declare global {
-//   interface Window {
-//        __REDUX_DEVTOOLS_EXTENSION__: any;
-//   }
-//}
 
 export interface MainState {
     users: UserState;

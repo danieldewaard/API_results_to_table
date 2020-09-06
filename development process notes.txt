@@ -3,3 +3,8 @@ https://nodejs.org/en/
 
 2. Following the following instructions to initalise a react app
 https://github.com/facebook/create-react-app
+
+3. Material UI https://material-ui.com/, Material-table https://material-table.com/#/ (see here for documentation about csv export, scrolling etc)
+
+4. Example of using react to access data from an API 
+https://github.com/sigo/example-react-redux-api-fetch

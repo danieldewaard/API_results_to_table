@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { postsApiUrl } from './constants';
 import { Action, Dispatch } from 'redux';
 
 export const USERS_FETCH_BEGIN = 'USERS_FETCH_BEGIN';
@@ -51,21 +50,10 @@ export const usersFetch = () => (dispatch: Dispatch<UsersAction>) => {
     // ...now
     return axios.get('https://reqres.in/api/users')
 		.then(resp => {
-        //.then((response: { data: UsersList }) => {
-        //.then((response: { data: UsersList }) => {
               
-            // Get only 10 first posts, due to task requirements
-            // Array should be sliced ASAP, because we don't need large amount of data in an action
-            
-            //const first10Posts = response.data;// .slice(0, 10);
-			console.log("something happened")
-			
-            console.log(resp.data.data)
 			dispatch(usersFetchSuccess(resp.data.data));
         })
         .catch(() => {
-			console.log("something went wrong")
-            // Something is no yes 👎 (thanks Tusk for english lessons)
             dispatch(usersFetchError());
         });
 };
