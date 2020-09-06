@@ -9,12 +9,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
-import { connect } from 'react-redux';
-import { bindActionCreators, Dispatch } from 'redux';
-import { UsersAction, usersFetch } from '../actions';
-import { MainState } from '../../index';
-import { UsersState } from '../reducers';
-
 console.log("hellooo")
 
 const columns = [
@@ -75,7 +69,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function StickyHeadTable() {
+export default function CustomTable() {
+	
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -136,17 +131,3 @@ export default function StickyHeadTable() {
     </Paper>
   );
 }
-
-
-// Provide access to state
-const mapStateToProps = (state: MainState) => ({
-    usersState: state.users
-});
-
-// Provide access to dispatching actions
-const mapDispatchToProps = (dispatch: Dispatch<UsersAction>) => ({
-    ...bindActionCreators({usersFetch}, dispatch)
-});
-
-// Connect mappers with component
-//export default connect(mapStateToProps, mapDispatchToProps)(UsersList);
